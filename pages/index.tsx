@@ -1,6 +1,7 @@
 import { useDummyList } from '@/src/api/demo'
 import useTranslation from 'next-translate/useTranslation'
 import { hasPermissions, PermissionTypes } from '@/src/utils/hasPermissions'
+import { Button } from 'antd'
 const Home = () => {
     const { t } = useTranslation()
     const { data } = useDummyList()
@@ -36,7 +37,7 @@ const Home = () => {
             </ul>
 
             {hasPermissions(features, { moduleId: 2, key: 'display' }) ? (
-                <button> login</button>
+                <Button> login</Button>
             ) : null}
         </>
     )
